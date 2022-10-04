@@ -1,11 +1,57 @@
-.App {
-  text-align: center;
+/*============== navbar design  =============*/
+.nav-ul {
+  padding: 5px;
+  margin: 0;
+  background-color: skyblue;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-ul li {
+  display: inline-block;
+  padding: 10px;
 }
+
+.nav-ul li a {
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+}
+
+/*=============== singup page design  ==============*/
+.register {
+  margin-left: 30px;
+}
+
+.inputBox {
+  display: block;
+  margin: 25px;
+  padding: 7px;
+  width: 300px;
+  border: 1px solid skyblue;
+}
+
+.appButton {
+  margin: 25px;
+  padding: 10px;
+  width: 167px;
+  background-color: skyblue;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+/*=============== Footer design  ==============*/
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background-color: skyblue;
+}
+
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -32,6 +78,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
