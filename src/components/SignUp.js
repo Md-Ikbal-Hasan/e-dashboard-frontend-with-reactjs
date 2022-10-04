@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
 
+    // if user is already signed up then he/she can not come to sign up page
     const navigate = useNavigate();
+    useEffect(() => {
+        const auth = localStorage.getItem('user');
+        if (auth) {
+            navigate("/")
+        }
+    })
 
+
+    // collect data from user using form  and set to database
     const collectData = async () => {
         console.log(name, email, password);
 
@@ -20,10 +29,12 @@ const SignUp = () => {
 
         result = await result.json();
         console.log(result);
-        if (result) {
-            navigate("/")
-        }
+
+        localStorage.setItem('user', JSON.stringify(result));
+        navigate("/")
     }
+
+
     return (
         <div className='register'>
             <h1>Registration</h1>
