@@ -15,19 +15,22 @@ const Nav = () => {
 
 
     return (
-        <div className='nav-ul'>
-            <ul>
-                <li> <Link to="/">Products</Link> </li>
-                <li> <Link to="/add">Add product</Link> </li>
-                <li> <Link to="/update">Update Products</Link> </li>
-                <li>  </li>
-                <li> <Link to="/profile">Profile</Link> </li>
-                <li>
-                    {auth ? <Link onClick={logout} to="/signup">Logout</Link> :
-                        <Link to="/signup">Sign Up</Link>}
-                </li>
-            </ul>
+        <div >
+            <img className='logo' src="https://content.wepik.com/statics/6976757/preview-page0.jpg" alt="" />
+            {auth ?
+                <ul className='nav-ul'>
+                    <li> <Link to="/">Products</Link> </li>
+                    <li> <Link to="/add">Add product</Link> </li>
+                    <li> <Link to="/update">Update Products</Link> </li>
+                    <li> <Link to="/profile">Profile</Link> </li>
+                    <li><Link onClick={logout} to="/signup">Logout( {JSON.parse(auth).name}) </Link></li>
+                </ul> :
 
+                <ul className='nav-ul nav-right'>
+                    <li><Link to="/signup">Sign Up</Link></li>
+                    <li> <Link to="/login">Login</Link> </li>
+                </ul>
+            }
         </div>
     );
 };
