@@ -7,7 +7,7 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-    // if user is already signed up then he/she can not come to sign up page
+    // if user is already logged in then he/she can not come to login  page
     useEffect(() => {
         const auth = localStorage.getItem('user');
         if (auth) {

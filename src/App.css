@@ -30,7 +30,8 @@
 }
 
 /*=============== singup and login page design  ==============*/
-.register {
+.register,
+.product {
   margin-left: 50px;
 }
 
